@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import * as yup from 'yup'
 import schemas from '../../shared/schemas'
+import txt from '../i18n/index.json'
 
 /*
   👉 TASK 2
@@ -26,6 +27,8 @@ export default function App({ lang = 'en' }) {
   const [success, setSuccess] = useState()
   const [failure, setFailure] = useState()
   const [submitAllowed, setSubmitAllowed] = useState(false)
+
+  const texts = txt[language]
 
   useEffect(() => {
     schemas.userSchema.isValid(values).then(setSubmitAllowed)
