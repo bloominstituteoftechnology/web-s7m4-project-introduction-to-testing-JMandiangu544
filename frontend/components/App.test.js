@@ -25,11 +25,18 @@ describe('Module 4 Project Tests', () => {
     })
   })
   describe('Spanish Language', () => {
-    /*
-      👉 TASK 3
-
-      This is done after making the UI multilingual.
-    */
+    test(`TEXT_HEADING_CREATE_ACCOUNT is visible`, () => {
+      render(<App lang="esp" />)
+      expect(screen.getByText(txt.esp.TEXT_HEADING_CREATE_ACCOUNT)).toBeVisible()
+    })
+    test(`LABEL_USERNAME is visible`, () => {
+      render(<App lang="esp" />)
+      expect(screen.getByLabelText(txt.esp.LABEL_USERNAME)).toBeVisible()
+    })
+    test(`PLACEHOLDER_USERNAME is visible`, () => {
+      render(<App lang="esp" />)
+      expect(screen.getByPlaceholderText(txt.esp.PLACEHOLDER_USERNAME)).toBeVisible()
+    })
   })
   describe('getEntriesByKeyPrefix', () => {
     test('can extract the correct data', () => {
